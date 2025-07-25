@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>True or False</title>
+</head>
+<body>
+  <h1>Мене звати Вікторія</h1>
+  <p>
+    Я люблю відпочивати<br>
+    Я люблю малювати картинки<br>
+    Я люблю математику<br>
+  </p>
+
+ <hr>
+
+  <h2> Опитування "Яку книгу тобі прочитати?"</h2>
+  <button onclick="startBookQuiz()">Почати опитування</button>
+
+  <script>
+    function startBookQuiz() {
+      let genre = prompt("Який твій улюблений жанр? (fantasy / detective / romance / sci-fi / nonfiction)");
+      let mood = prompt("Який у тебе настрій? (dreamy / curious / romantic / adventurous / thoughtful)");
+      let format = prompt("Що ти хочеш: легке читання чи щось серйозне? (light / deep)");
+
+      let result;
+
+      if (!genre || !mood || !format) {
+        result = "Будь ласка, не залишай поля порожніми!";
+      } else {
+        genre = genre.toLowerCase();
+        mood = mood.toLowerCase();
+        format = format.toLowerCase();
+
+        if (genre === "fantasy" && mood === "dreamy" && format === "light") {
+          result = "Спробуй «Гаррі Поттер» Дж. К. Ролінг ";
+        } else if (genre === "detective" && mood === "curious") {
+          result = "Рекомендую «Десять негренят» Агати Крісті – класика жанру!";
+        } else if (genre === "romance" && mood === "romantic") {
+          result = "Прочитай «Гордість і упередження» Джейн Остін";
+        } else if (genre === "sci-fi" && format === "deep") {
+          result = "«1984» Джорджа Орвелла – сильна антиутопія, що змушує задуматися кожжного з нас.";
+        } else if (genre === "nonfiction" && mood === "thoughtful") {
+          result = "Спробуй «Мислення, швидке й повільне» Д. Канемана – захоплива наука!";
+        } else {
+          result = "Спробуй щось нове – переглянь останні рекомендації на сайті Goodreads за улюбленим жанром!";
+        }
+      }
+
+      alert(result);
+    }
+  </script>
+</body>
+</html>
